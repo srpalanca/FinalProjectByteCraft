@@ -833,6 +833,7 @@
             this.picCooler.Location = new System.Drawing.Point(469, 729);
             this.picCooler.Name = "picCooler";
             this.picCooler.Size = new System.Drawing.Size(203, 203);
+            this.picCooler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCooler.TabIndex = 21;
             this.picCooler.TabStop = false;
             // 
@@ -843,6 +844,7 @@
             this.picPSU.Location = new System.Drawing.Point(68, 729);
             this.picPSU.Name = "picPSU";
             this.picPSU.Size = new System.Drawing.Size(203, 203);
+            this.picPSU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPSU.TabIndex = 20;
             this.picPSU.TabStop = false;
             // 
@@ -853,6 +855,7 @@
             this.picStorage.Location = new System.Drawing.Point(68, 418);
             this.picStorage.Name = "picStorage";
             this.picStorage.Size = new System.Drawing.Size(203, 203);
+            this.picStorage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picStorage.TabIndex = 19;
             this.picStorage.TabStop = false;
             // 
@@ -863,6 +866,7 @@
             this.picRAM.Location = new System.Drawing.Point(469, 418);
             this.picRAM.Name = "picRAM";
             this.picRAM.Size = new System.Drawing.Size(203, 203);
+            this.picRAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRAM.TabIndex = 18;
             this.picRAM.TabStop = false;
             // 
@@ -872,6 +876,7 @@
             this.picGPU.Location = new System.Drawing.Point(469, 102);
             this.picGPU.Name = "picGPU";
             this.picGPU.Size = new System.Drawing.Size(203, 203);
+            this.picGPU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGPU.TabIndex = 17;
             this.picGPU.TabStop = false;
             // 
@@ -881,6 +886,7 @@
             this.picCPU.Location = new System.Drawing.Point(68, 102);
             this.picCPU.Name = "picCPU";
             this.picCPU.Size = new System.Drawing.Size(203, 203);
+            this.picCPU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCPU.TabIndex = 16;
             this.picCPU.TabStop = false;
             // 

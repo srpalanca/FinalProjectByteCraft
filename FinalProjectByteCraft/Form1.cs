@@ -10,21 +10,6 @@ namespace FinalProjectByteCraft
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -41,14 +26,22 @@ namespace FinalProjectByteCraft
             this.Hide(); 
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();  
         }
+
+
+        private void label1_Click(object sender, EventArgs e) { }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
     }
 }

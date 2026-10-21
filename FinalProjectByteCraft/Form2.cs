@@ -88,12 +88,11 @@ namespace FinalProjectByteCraft
         public Form2(string name)
         {
             InitializeComponent();
-            customerName = string.IsNullOrWhiteSpace(name) ? "Valued Customer" : name;
+            customerName = name;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.Text = $"ByteCraft Systems - Dashboard | Welcome, {customerName}";
             InitializePCBuilderOptions();
             WireUpEvents();
             ShowPanel(panelBuildPC);
@@ -101,24 +100,71 @@ namespace FinalProjectByteCraft
 
         private void WireUpEvents()
         {
-            PictureBox[] picBoxes = { picCPU, picGPU, picRAM, picStorage, picPSU, picCooler };
-            foreach (var pic in picBoxes)
-            {
-                if (pic != null) pic.SizeMode = PictureBoxSizeMode.Zoom;
+            if (cmbCPU != null) 
+            { 
+                cmbCPU.SelectedIndexChanged -= cmbCPU_SelectedIndexChanged; 
+                cmbCPU.SelectedIndexChanged += cmbCPU_SelectedIndexChanged; 
+            }
+            
+            if (cmbGPU != null) 
+            { 
+                cmbGPU.SelectedIndexChanged -= cmbGPU_SelectedIndexChanged; 
+                cmbGPU.SelectedIndexChanged += cmbGPU_SelectedIndexChanged; 
+            }
+            
+            if (cmbRAM != null) 
+            { 
+                cmbRAM.SelectedIndexChanged -= cmbRAM_SelectedIndexChanged;
+                cmbRAM.SelectedIndexChanged += cmbRAM_SelectedIndexChanged; 
             }
 
-            if (cmbCPU != null) { cmbCPU.SelectedIndexChanged -= cmbCPU_SelectedIndexChanged; cmbCPU.SelectedIndexChanged += cmbCPU_SelectedIndexChanged; }
-            if (cmbGPU != null) { cmbGPU.SelectedIndexChanged -= cmbGPU_SelectedIndexChanged; cmbGPU.SelectedIndexChanged += cmbGPU_SelectedIndexChanged; }
-            if (cmbRAM != null) { cmbRAM.SelectedIndexChanged -= cmbRAM_SelectedIndexChanged; cmbRAM.SelectedIndexChanged += cmbRAM_SelectedIndexChanged; }
-            if (cmbStorage != null) { cmbStorage.SelectedIndexChanged -= cmbStorage_SelectedIndexChanged; cmbStorage.SelectedIndexChanged += cmbStorage_SelectedIndexChanged; }
-            if (cmbPSU != null) { cmbPSU.SelectedIndexChanged -= cmbPSU_SelectedIndexChanged; cmbPSU.SelectedIndexChanged += cmbPSU_SelectedIndexChanged; }
-            if (cmbCooler != null) { cmbCooler.SelectedIndexChanged -= cmbCooler_SelectedIndexChanged; cmbCooler.SelectedIndexChanged += cmbCooler_SelectedIndexChanged; }
+            if (cmbStorage != null) 
+            { 
+                cmbStorage.SelectedIndexChanged -= cmbStorage_SelectedIndexChanged; 
+                cmbStorage.SelectedIndexChanged += cmbStorage_SelectedIndexChanged; 
+            }
 
-            if (btnAddToCartBuild != null) { btnAddToCartBuild.Click -= btnAddToCartBuild_Click; btnAddToCartBuild.Click += btnAddToCartBuild_Click; }
-            if (btnClearSelections != null) { btnClearSelections.Click -= btnClearSelections_Click; btnClearSelections.Click += btnClearSelections_Click; }
-            if (btnAutoBuild != null) { btnAutoBuild.Click -= btnAutoBuild_Click; btnAutoBuild.Click += btnAutoBuild_Click; }
-            if (btnClearCart != null) { btnClearCart.Click -= btnClearCart_Click; btnClearCart.Click += btnClearCart_Click; }
-            if (btnCheckout != null) { btnCheckout.Click -= btnCheckout_Click; btnCheckout.Click += btnCheckout_Click; }
+            if (cmbPSU != null) 
+            { 
+                cmbPSU.SelectedIndexChanged -= cmbPSU_SelectedIndexChanged;
+                cmbPSU.SelectedIndexChanged += cmbPSU_SelectedIndexChanged; 
+            }
+
+            if (cmbCooler != null) 
+            { 
+                cmbCooler.SelectedIndexChanged -= cmbCooler_SelectedIndexChanged; 
+                cmbCooler.SelectedIndexChanged += cmbCooler_SelectedIndexChanged; 
+            }
+
+            if (btnAddToCartBuild != null) 
+            { 
+                btnAddToCartBuild.Click -= btnAddToCartBuild_Click; 
+                btnAddToCartBuild.Click += btnAddToCartBuild_Click; 
+            }
+           
+            if (btnClearSelections != null) 
+            { 
+                btnClearSelections.Click -= btnClearSelections_Click; 
+                btnClearSelections.Click += btnClearSelections_Click; 
+            }
+
+            if (btnAutoBuild != null) 
+            { 
+                btnAutoBuild.Click -= btnAutoBuild_Click;
+                btnAutoBuild.Click += btnAutoBuild_Click; 
+            }
+
+            if (btnClearCart != null) 
+            { 
+                btnClearCart.Click -= btnClearCart_Click; 
+                btnClearCart.Click += btnClearCart_Click; 
+            }
+
+            if (btnCheckout != null) 
+            { 
+                btnCheckout.Click -= btnCheckout_Click; 
+                btnCheckout.Click += btnCheckout_Click; 
+            }
 
             if (listCartItems != null)
             {
@@ -126,8 +172,17 @@ namespace FinalProjectByteCraft
                 listCartItems.ItemCheck += listCartItems_ItemCheck;
             }
 
-            if (btnGoToBuilder != null) { btnGoToBuilder.Click -= btnGoToBuilder_Click; btnGoToBuilder.Click += btnGoToBuilder_Click; }
-            if (btnBackToBuilder != null) { btnBackToBuilder.Click -= btnBackToBuilder_Click; btnBackToBuilder.Click += btnBackToBuilder_Click; }
+            if (btnGoToBuilder != null) 
+            { 
+                btnGoToBuilder.Click -= btnGoToBuilder_Click; 
+                btnGoToBuilder.Click += btnGoToBuilder_Click; 
+            }
+
+            if (btnBackToBuilder != null) 
+            { 
+                btnBackToBuilder.Click -= btnBackToBuilder_Click; 
+                btnBackToBuilder.Click += btnBackToBuilder_Click; 
+            }
         }
 
         private void InitializePCBuilderOptions()
@@ -158,7 +213,7 @@ namespace FinalProjectByteCraft
             cmbPSU.SelectedIndex = 0;
 
             cmbCooler.Items.Clear();
-            cmbCooler.Items.Add("Select PC Case...");
+            cmbCooler.Items.Add("Select Cooler...");
             foreach (var kvp in coolerPrices) cmbCooler.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbCooler.SelectedIndex = 0;
 
@@ -340,7 +395,7 @@ namespace FinalProjectByteCraft
 
             if (bestTotal == -1)
             {
-                MessageBox.Show($"Sorry, your budget of ₱{maxBudget:N2} is too low for our cheapest configuration!", "Budget Too Low", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Sorry, your budget of ₱{maxBudget:N2} is too low for our cheapest PC Components!", "Budget Too Low", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -350,8 +405,6 @@ namespace FinalProjectByteCraft
             SelectMatchingComboItem(cmbStorage, bestStorage.Key);
             SelectMatchingComboItem(cmbPSU, bestPsu.Key);
             SelectMatchingComboItem(cmbCooler, bestCooler.Key);
-
-            MessageBox.Show($"Success! We put together an optimal build for ₱{bestTotal:N2} matching your budget.", "AI Build Generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private string ShowInputDialog(string title, string promptText)
@@ -553,10 +606,8 @@ namespace FinalProjectByteCraft
             }
 
             decimal checkedTotal = 0;
-            string receiptText = "=== BYTECRAFT SYSTEMS RECEIPT ===\r\n";
-            receiptText += $"Customer: {customerName}\r\n";
+            string  receiptText = $"Customer: {customerName}\r\n";
             receiptText += $"Date: {DateTime.Now:yyyy-MM-dd HH:mm:ss}\r\n";
-            receiptText += "----------------------------------------\r\n";
 
             if (listReceiptItems != null)
             {
@@ -588,7 +639,6 @@ namespace FinalProjectByteCraft
             if (lblReceiptDate != null) lblReceiptDate.Text = $"Date: {DateTime.Now:yyyy-MM-dd HH:mm:ss}";
             if (lblReceiptGrandTotal != null) lblReceiptGrandTotal.Text = $"Total Amount Paid: ₱{checkedTotal:N2}";
 
-            // 5. TEXT FILE MANIPULATION: Generating and writing physical .txt receipt files
             try
             {
                 string fileName = $"Receipt_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
@@ -601,11 +651,10 @@ namespace FinalProjectByteCraft
             }
 
             ShowPanel(panelReceipt);
-        }
+        }  
 
         private void btnGoToBuilder_Click(object sender, EventArgs e) => ShowPanel(panelBuildPC);
         private void btnBackToBuilder_Click(object sender, EventArgs e) => ShowPanel(panelBuildPC);
-
 
         private void ShowPanel(Panel selectedPanel)
         {
@@ -652,13 +701,11 @@ namespace FinalProjectByteCraft
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e) => Application.Exit();
 
-        #region Unused Designer Event Handlers
         private void panelBuildPC_Paint(object sender, PaintEventArgs e) { }
         private void lblEstimatedTotal_Click(object sender, EventArgs e) { }
         private void panelCatalog_Paint(object sender, PaintEventArgs e) { }
         private void label9_Click(object sender, EventArgs e) { }
         private void label94_Click(object sender, EventArgs e) { }
         private void label54_Click(object sender, EventArgs e) { }
-        #endregion
     }
 }
