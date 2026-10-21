@@ -70,18 +70,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -92,28 +92,88 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\images.jpg" />
+    <None Include="Resources\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\images %281%29.jpg" />
+    <Content Include="Resources\1TB.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1TB1.png" />
+    <Content Include="Resources\3060.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\30601.jpg" />
+    <Content Include="Resources\3090.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\30901.png" />
+    <Content Include="Resources\4060.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\40601.png" />
+    <Content Include="Resources\4090.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\40901.png" />
+    <Content Include="Resources\500.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\5001.png" />
+    <Content Include="Resources\500GB.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\5060.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\50601.jpg" />
+    <Content Include="Resources\5090.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\50901.png" />
+    <Content Include="Resources\air.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\air1.png" />
+    <Content Include="Resources\gold.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\gold1.png" />
+    <Content Include="Resources\i5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\i51.png" />
+    <Content Include="Resources\i7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\i71.png" />
+    <Content Include="Resources\i9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\images %282%29.jpg" />
+    <None Include="Resources\i91.png" />
+    <Content Include="Resources\liquid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\silver1.png" />
+    <None Include="Resources\login_photo.jpg" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\liquid1.jpg" />
+    <Content Include="Resources\platinum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\platinum1.png" />
+    <Content Include="Resources\ram.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ram1.png" />
+    <None Include="Resources\Screenshot 2026-10-16 012258.png" />
+    <None Include="Resources\ramkingston.jpg" />
+    <Content Include="Resources\silver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FI_DM95-MSI-White-O11D-Mini-Build.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\my-white-gaming-pc-dream-build-2024-v0-1i8rwmie82jd1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\png-clipart-gray-computer-illustration-windows-95-computer-icons-operating-systems-windows-10-window-furniture-text.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\792205776_2261648265233650_921961389034082610_n.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\808564412_1691715729212320_5840993625865573944_n.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\786342602_1569555967998043_7854264741511029868_n.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

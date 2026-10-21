@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label90.Text" xml:space="preserve">
+    <value>A liquid cooler circulates coolant through a cooling block and radiator to transfer heat away from the processor. Available in all-in-one (AIO) and custom-loop designs, it can provide effective cooling for high-performance systems, depending on radiator size, design, and airflow.</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>An air cooler uses a heatsink and fan to transfer heat away from the processor and release it into the surrounding air. It is generally affordable, straightforward to maintain, and available in models suitable for basic computers through high-performance gaming systems.</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>This 1000W power supply is designed for high-performance systems with power-hungry processors and graphics cards. Its 80 PLUS Platinum certification indicates high power-conversion efficiency under specified test conditions, making it suitable for demanding workstations and premium gaming builds.</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>This 750W power supply is designed to support gaming computers and more powerful hardware configurations. Its 80 PLUS Gold certification indicates higher power-conversion efficiency under specified test conditions, making it a suitable option for many midrange to high-performance builds.</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>This 500W power supply delivers electrical power to the computer's components while meeting the 80 PLUS Silver efficiency certification requirements. It is appropriate for compatible entry-level or midrange systems, provided its available power and connectors meet the hardware's requirements.</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>A 1TB hard disk drive offers approximately twice the capacity of a 500GB drive for storing games, media, documents, and backups. It is suitable for users who need affordable bulk storage, especially when paired with an SSD for faster system startup and application loading.</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>A 500GB hard disk drive provides traditional mechanical storage for documents, photos, videos, and other files. It is an economical option for additional storage, although it is generally slower than a solid-state drive (SSD).</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>This 16GB DDR5 memory configuration offers an enthusiast-level data rate of 8000 MT/s for compatible systems. It is intended for performance-focused builds, but reaching this speed may require specific hardware support and memory-tuning settings.</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>This 16GB DDR5 memory configuration provides a high data rate of 7000 MT/s for compatible desktop platforms. It can benefit memory-sensitive workloads, although actual performance depends on the processor, motherboard, and memory configuration.</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>This 16GB DDR5 memory configuration offers a higher data rate of 6000 MT/s for responsive computing and gaming. It is a good option for compatible systems that need a balance between memory speed, performance, and cost.</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>This 16GB DDR5 memory configuration provides fast system memory for everyday computing, multitasking, and gaming. Its 5000 MT/s data rate is suitable for compatible DDR5 systems and general-purpose desktop builds.</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>The NVIDIA GeForce RTX 3090 is a high-performance graphics card designed for demanding gaming, rendering, and professional applications. With 24GB of GDDR6X memory, it can handle large creative projects, complex 3D scenes, and memory-intensive AI workloads.</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>The NVIDIA GeForce RTX 3060 12GB is a graphics card suitable for 1080p gaming, creative projects, and general GPU-accelerated computing. Its 12GB of GDDR6 memory provides additional capacity for high-resolution textures, video editing, and certain 3D or AI workloads.</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>The NVIDIA GeForce RTX 4090 is a high-end graphics card designed for demanding gaming and professional creative workloads. Its 24GB of GDDR6X memory and powerful processing capabilities make it suitable for 4K gaming, 3D rendering, video production, and AI applications.</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>The NVIDIA GeForce RTX 4060 8GB is an energy-efficient graphics card designed primarily for 1080p gaming. It supports ray tracing, DLSS 3, and NVIDIA's video-encoding features, making it useful for gaming, streaming, and entry-level creative work.</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>The NVIDIA GeForce RTX 5090 is a flagship graphics card built for extreme gaming performance and demanding professional workloads. With 32GB of GDDR7 memory, advanced ray tracing, and AI acceleration, it is suited for high-resolution gaming, 3D rendering, and AI development.</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>The NVIDIA GeForce RTX 5060 8GB is a modern graphics card designed for 1080p gaming and everyday creative workloads. It supports ray tracing, DLSS 4, and AI-powered graphics features, making it suitable for modern games and supported content creation applications.</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>The Intel Core i5-14500 is a 14th-generation processor that delivers dependable performance for everyday tasks and demanding applications. Its 14 cores and 20 threads make it suitable for gaming, office work, programming, and multitasking.</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>The Intel Core i5-13500 is a 13th-generation processor designed for versatile computing and efficient multitasking. With 14 cores and 20 threads, it performs well in gaming, programming, productivity applications, and moderate content creation.</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>The Intel Core i5-12500 is a 12th-generation processor suitable for everyday computing, office applications, and gaming. It features 6 cores and 12 threads, providing reliable performance for students, casual gamers, and general desktop users.</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>The Intel Core i7-14700 is a 14th-generation processor that offers powerful performance for gaming and professional computing. With 20 cores and 28 threads, it handles complex workloads, content creation, and multiple applications simultaneously.</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>The Intel Core i7-13700 is a 13th-generation processor designed for demanding applications and responsive gaming performance. Its 16 cores and 24 threads support multitasking, video editing, streaming, and other processor-intensive workloads.</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>The Intel Core i7-12700 is a 12th-generation processor that balances strong performance with efficient multitasking. It features 12 cores and 20 threads, making it a good choice for gaming, productivity, and software development.</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>The Intel Core i9-14900 is a 14th-generation processor designed for high-end desktop performance. Its 24 cores and 32 threads make it suitable for demanding games, advanced content creation, and intensive multitasking.</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>The Intel Core i9-13900 is a 13th-generation processor built for powerful multitasking and demanding workloads. With 24 cores and 32 threads, it delivers excellent performance for gaming, video editing, rendering, and professional applications.</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>The Intel Core i9-12900 is a 12th-generation processor designed for demanding computing tasks, multitasking, and gaming. It features 16 cores and 24 threads, making it suitable for content creation, programming, and high-performance desktop systems.</value>
+  </data>
 </root>

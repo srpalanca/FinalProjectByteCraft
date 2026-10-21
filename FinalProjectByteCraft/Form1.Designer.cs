@@ -171,7 +171,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FinalProjectByteCraft.Properties.Resources.FI_DM95_MSI_White_O11D_Mini_Build;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::FinalProjectByteCraft.Properties.Resources.login_photo;
             this.pictureBox1.Location = new System.Drawing.Point(311, 121);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(317, 209);
@@ -183,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(640, 402);
             this.Controls.Add(this.button3);
