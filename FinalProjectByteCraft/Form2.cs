@@ -6,16 +6,20 @@ using System.Windows.Forms;
 
 namespace FinalProjectByteCraft
 {
+    // Graphical User Interfaces
     public partial class Form2 : Form
     {
+        // Designing with Classes
         public class CartItem
         {
             public string Category { get; set; }
             public string ItemName { get; set; }
             public decimal Price { get; set; }
 
+            // String Methods
             public override string ToString()
             {
+                // Decision Structures
                 if (Category == "SET_HEADER")
                 {
                     return ItemName;
@@ -28,6 +32,7 @@ namespace FinalProjectByteCraft
         private int buildSetCount = 0;
         private bool isUpdatingCheck = false;
 
+        // Lists and Dictionaries
         private Dictionary<string, decimal> cpuPrices = new Dictionary<string, decimal>()
         {
             { "Intel Core i9-12900", 30000.00m },
@@ -41,6 +46,7 @@ namespace FinalProjectByteCraft
             { "Intel Core i5-14500", 17000.00m }
         };
 
+        // Lists and Dictionaries
         private Dictionary<string, decimal> gpuPrices = new Dictionary<string, decimal>()
         {
             { "NVIDIA GeForce RTX 5060 8GB", 28000.00m },
@@ -51,6 +57,7 @@ namespace FinalProjectByteCraft
             { "NVIDIA GeForce RTX 3090 24GB", 65000.00m }
         };
 
+        // Lists and Dictionaries
         private Dictionary<string, decimal> ramPrices = new Dictionary<string, decimal>()
         {
             { "16GB DDR5 5000MHz", 3500.00m },
@@ -59,12 +66,14 @@ namespace FinalProjectByteCraft
             { "16GB DDR5 8000MHz", 8000.00m }
         };
 
+        // Lists and Dictionaries
         private Dictionary<string, decimal> storagePrices = new Dictionary<string, decimal>()
         {
             { "500GB HDD", 1500.00m },
             { "1TB HDD", 2800.00m }
         };
 
+        // Lists and Dictionaries
         private Dictionary<string, decimal> psuPrices = new Dictionary<string, decimal>()
         {
             { "500W 80+ Silver PSU", 2500.00m },
@@ -72,25 +81,30 @@ namespace FinalProjectByteCraft
             { "1000W 80+ Platinum PSU", 7000.00m }
         };
 
+        // Lists and Dictionaries
         private Dictionary<string, decimal> coolerPrices = new Dictionary<string, decimal>()
         {
             { "Air Cooler", 1000.00m },
             { "Liquid Cooler", 3500.00m }
         };
 
+        // Lists and Dictionaries
         private List<CartItem> shoppingCart = new List<CartItem>();
 
+        // Sequential Structures
         public Form2()
         {
             InitializeComponent();
         }
 
+        // Sequential Structures
         public Form2(string name)
         {
             InitializeComponent();
             customerName = name;
         }
 
+        // Sequential Structures
         private void Form2_Load(object sender, EventArgs e)
         {
             InitializePCBuilderOptions();
@@ -100,70 +114,71 @@ namespace FinalProjectByteCraft
 
         private void WireUpEvents()
         {
-            if (cmbCPU != null) 
-            { 
-                cmbCPU.SelectedIndexChanged -= cmbCPU_SelectedIndexChanged; 
-                cmbCPU.SelectedIndexChanged += cmbCPU_SelectedIndexChanged; 
+            // Decision Structures
+            if (cmbCPU != null)
+            {
+                cmbCPU.SelectedIndexChanged -= cmbCPU_SelectedIndexChanged;
+                cmbCPU.SelectedIndexChanged += cmbCPU_SelectedIndexChanged;
             }
-            
-            if (cmbGPU != null) 
-            { 
-                cmbGPU.SelectedIndexChanged -= cmbGPU_SelectedIndexChanged; 
-                cmbGPU.SelectedIndexChanged += cmbGPU_SelectedIndexChanged; 
+
+            if (cmbGPU != null)
+            {
+                cmbGPU.SelectedIndexChanged -= cmbGPU_SelectedIndexChanged;
+                cmbGPU.SelectedIndexChanged += cmbGPU_SelectedIndexChanged;
             }
-            
-            if (cmbRAM != null) 
-            { 
+
+            if (cmbRAM != null)
+            {
                 cmbRAM.SelectedIndexChanged -= cmbRAM_SelectedIndexChanged;
-                cmbRAM.SelectedIndexChanged += cmbRAM_SelectedIndexChanged; 
+                cmbRAM.SelectedIndexChanged += cmbRAM_SelectedIndexChanged;
             }
 
-            if (cmbStorage != null) 
-            { 
-                cmbStorage.SelectedIndexChanged -= cmbStorage_SelectedIndexChanged; 
-                cmbStorage.SelectedIndexChanged += cmbStorage_SelectedIndexChanged; 
+            if (cmbStorage != null)
+            {
+                cmbStorage.SelectedIndexChanged -= cmbStorage_SelectedIndexChanged;
+                cmbStorage.SelectedIndexChanged += cmbStorage_SelectedIndexChanged;
             }
 
-            if (cmbPSU != null) 
-            { 
+            if (cmbPSU != null)
+            {
                 cmbPSU.SelectedIndexChanged -= cmbPSU_SelectedIndexChanged;
-                cmbPSU.SelectedIndexChanged += cmbPSU_SelectedIndexChanged; 
+                cmbPSU.SelectedIndexChanged += cmbPSU_SelectedIndexChanged;
             }
 
-            if (cmbCooler != null) 
-            { 
-                cmbCooler.SelectedIndexChanged -= cmbCooler_SelectedIndexChanged; 
-                cmbCooler.SelectedIndexChanged += cmbCooler_SelectedIndexChanged; 
+            if (cmbCooler != null)
+            {
+                cmbCooler.SelectedIndexChanged -= cmbCooler_SelectedIndexChanged;
+                cmbCooler.SelectedIndexChanged += cmbCooler_SelectedIndexChanged;
             }
 
-            if (btnAddToCartBuild != null) 
-            { 
-                btnAddToCartBuild.Click -= btnAddToCartBuild_Click; 
-                btnAddToCartBuild.Click += btnAddToCartBuild_Click; 
-            }
-           
-            if (btnClearSelections != null) 
-            { 
-                btnClearSelections.Click -= btnClearSelections_Click; 
-                btnClearSelections.Click += btnClearSelections_Click; 
+            if (btnAddToCartBuild != null)
+            {
+                btnAddToCartBuild.Click -= btnAddToCartBuild_Click;
+                btnAddToCartBuild.Click += btnAddToCartBuild_Click;
             }
 
-            if (btnAutoBuild != null) 
-            { 
+            if (btnClearSelections != null)
+            {
+                btnClearSelections.Click -= btnClearSelections_Click;
+                btnClearSelections.Click += btnClearSelections_Click;
+            }
+
+            if (btnAutoBuild != null)
+            {
                 btnAutoBuild.Click -= btnAutoBuild_Click;
-                btnAutoBuild.Click += btnAutoBuild_Click; 
+                btnAutoBuild.Click += btnAutoBuild_Click;
             }
 
-            if (btnClearCart != null) 
-            { 
-                btnClearCart.Click -= btnClearCart_Click; 
-                btnClearCart.Click += btnClearCart_Click; 
+            if (btnClearCart != null)
+            {
+                btnClearCart.Click -= btnClearCart_Click;
+                btnClearCart.Click += btnClearCart_Click;
             }
 
-            if (btnCheckout != null) 
-            { 
-                btnCheckout.Click -= btnCheckout_Click; 
-                btnCheckout.Click += btnCheckout_Click; 
+            if (btnCheckout != null)
+            {
+                btnCheckout.Click -= btnCheckout_Click;
+                btnCheckout.Click += btnCheckout_Click;
             }
 
             if (listCartItems != null)
@@ -172,16 +187,16 @@ namespace FinalProjectByteCraft
                 listCartItems.ItemCheck += listCartItems_ItemCheck;
             }
 
-            if (btnGoToBuilder != null) 
-            { 
-                btnGoToBuilder.Click -= btnGoToBuilder_Click; 
-                btnGoToBuilder.Click += btnGoToBuilder_Click; 
+            if (btnGoToBuilder != null)
+            {
+                btnGoToBuilder.Click -= btnGoToBuilder_Click;
+                btnGoToBuilder.Click += btnGoToBuilder_Click;
             }
 
-            if (btnBackToBuilder != null) 
-            { 
-                btnBackToBuilder.Click -= btnBackToBuilder_Click; 
-                btnBackToBuilder.Click += btnBackToBuilder_Click; 
+            if (btnBackToBuilder != null)
+            {
+                btnBackToBuilder.Click -= btnBackToBuilder_Click;
+                btnBackToBuilder.Click += btnBackToBuilder_Click;
             }
         }
 
@@ -189,43 +204,52 @@ namespace FinalProjectByteCraft
         {
             cmbCPU.Items.Clear();
             cmbCPU.Items.Add("Select CPU...");
+            // Repetition Structures
             foreach (var kvp in cpuPrices) cmbCPU.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbCPU.SelectedIndex = 0;
 
             cmbGPU.Items.Clear();
             cmbGPU.Items.Add("Select GPU...");
+            // Repetition Structures
             foreach (var kvp in gpuPrices) cmbGPU.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbGPU.SelectedIndex = 0;
 
             cmbRAM.Items.Clear();
             cmbRAM.Items.Add("Select RAM...");
+            // Repetition Structures
             foreach (var kvp in ramPrices) cmbRAM.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbRAM.SelectedIndex = 0;
 
             cmbStorage.Items.Clear();
             cmbStorage.Items.Add("Select Storage...");
+            // Repetition Structures
             foreach (var kvp in storagePrices) cmbStorage.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbStorage.SelectedIndex = 0;
 
             cmbPSU.Items.Clear();
             cmbPSU.Items.Add("Select Power Supply...");
+            // Repetition Structures
             foreach (var kvp in psuPrices) cmbPSU.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbPSU.SelectedIndex = 0;
 
             cmbCooler.Items.Clear();
             cmbCooler.Items.Add("Select Cooler...");
+            // Repetition Structures
             foreach (var kvp in coolerPrices) cmbCooler.Items.Add($"{kvp.Key} - ₱{kvp.Value:N2}");
             cmbCooler.SelectedIndex = 0;
 
             UpdateTotalPrice();
         }
 
+        // Functions
         private Image LoadResourceImage(string fileName)
         {
             string path = Path.Combine(Application.StartupPath, "Resources", fileName);
+            // Decision Structures
             if (File.Exists(path)) return Image.FromFile(path);
 
             string altPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", fileName);
+            // Decision Structures
             if (File.Exists(altPath)) return Image.FromFile(altPath);
 
             return null;
@@ -233,6 +257,7 @@ namespace FinalProjectByteCraft
 
         private void btnClearSelections_Click(object sender, EventArgs e)
         {
+            // Decision Structures
             if (cmbCPU != null) cmbCPU.SelectedIndex = 0;
             if (cmbGPU != null) cmbGPU.SelectedIndex = 0;
             if (cmbRAM != null) cmbRAM.SelectedIndex = 0;
@@ -245,6 +270,7 @@ namespace FinalProjectByteCraft
 
         private void cmbCPU_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Decision Structures
             switch (cmbCPU.SelectedIndex)
             {
                 case 1: case 2: case 3: picCPU.Image = LoadResourceImage("i9.png"); break;
@@ -257,6 +283,7 @@ namespace FinalProjectByteCraft
 
         private void cmbGPU_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Decision Structures
             switch (cmbGPU.SelectedIndex)
             {
                 case 1: picGPU.Image = LoadResourceImage("5060.jpg"); break;
@@ -278,6 +305,7 @@ namespace FinalProjectByteCraft
 
         private void cmbStorage_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Decision Structures
             switch (cmbStorage.SelectedIndex)
             {
                 case 1: picStorage.Image = LoadResourceImage("500.png"); break;
@@ -289,6 +317,7 @@ namespace FinalProjectByteCraft
 
         private void cmbPSU_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Decision Structures
             switch (cmbPSU.SelectedIndex)
             {
                 case 1: picPSU.Image = LoadResourceImage("silver.png"); break;
@@ -301,6 +330,7 @@ namespace FinalProjectByteCraft
 
         private void cmbCooler_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Decision Structures
             switch (cmbCooler.SelectedIndex)
             {
                 case 1: picCooler.Image = LoadResourceImage("air.png"); break;
@@ -310,6 +340,7 @@ namespace FinalProjectByteCraft
             UpdateTotalPrice();
         }
 
+        // Functions
         private void UpdateTotalPrice()
         {
             decimal total = 0;
@@ -323,14 +354,18 @@ namespace FinalProjectByteCraft
             lblEstimatedTotal.Text = $"Estimated Total: ₱{total:N2}";
         }
 
+        // Functions
         private decimal GetPriceFromSelection(ComboBox cmb)
         {
+            // Decision Structures
             if (cmb == null || cmb.SelectedIndex <= 0) return 0m;
 
+            // String Methods
             string selectedText = cmb.SelectedItem.ToString();
             int dashIndex = selectedText.IndexOf(" - ₱");
             string itemName = (dashIndex != -1) ? selectedText.Substring(0, dashIndex).Trim() : selectedText.Trim();
 
+            // Decision Structures
             if (cmb == cmbCPU && cpuPrices.ContainsKey(itemName)) return cpuPrices[itemName];
             if (cmb == cmbGPU && gpuPrices.ContainsKey(itemName)) return gpuPrices[itemName];
             if (cmb == cmbRAM && ramPrices.ContainsKey(itemName)) return ramPrices[itemName];
@@ -345,8 +380,10 @@ namespace FinalProjectByteCraft
         {
             string input = ShowInputDialog("ByteCraft Auto-Budget Builder", "Enter your maximum budget in Pesos (₱):");
 
+            // Decision Structures
             if (string.IsNullOrWhiteSpace(input)) return;
 
+            // Decision Structures
             if (!decimal.TryParse(input, out decimal maxBudget))
             {
                 MessageBox.Show("Please enter a valid numeric budget.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -362,20 +399,27 @@ namespace FinalProjectByteCraft
 
             decimal bestTotal = -1;
 
+            // Repetition Structures
             foreach (var cpu in cpuPrices)
             {
+                // Repetition Structures
                 foreach (var gpu in gpuPrices)
                 {
+                    // Repetition Structures
                     foreach (var ram in ramPrices)
                     {
+                        // Repetition Structures
                         foreach (var storage in storagePrices)
                         {
+                            // Repetition Structures
                             foreach (var psu in psuPrices)
                             {
+                                // Repetition Structures
                                 foreach (var cooler in coolerPrices)
                                 {
                                     decimal currentTotal = cpu.Value + gpu.Value + ram.Value + storage.Value + psu.Value + cooler.Value;
 
+                                    // Decision Structures
                                     if (currentTotal <= maxBudget && currentTotal > bestTotal)
                                     {
                                         bestTotal = currentTotal;
@@ -393,6 +437,7 @@ namespace FinalProjectByteCraft
                 }
             }
 
+            // Decision Structures
             if (bestTotal == -1)
             {
                 MessageBox.Show($"Sorry, your budget of ₱{maxBudget:N2} is too low for our cheapest PC Components!", "Budget Too Low", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -407,6 +452,7 @@ namespace FinalProjectByteCraft
             SelectMatchingComboItem(cmbCooler, bestCooler.Key);
         }
 
+        // Functions
         private string ShowInputDialog(string title, string promptText)
         {
             Form prompt = new Form()
@@ -430,13 +476,17 @@ namespace FinalProjectByteCraft
             prompt.Controls.Add(textLabel);
             prompt.AcceptButton = confirmation;
 
+            // Decision Structures
             return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
 
+        // Functions
         private void SelectMatchingComboItem(ComboBox cmb, string itemName)
         {
+            // Repetition Structures
             for (int i = 0; i < cmb.Items.Count; i++)
             {
+                // String Methods & Decision Structures
                 if (cmb.Items[i].ToString().StartsWith(itemName))
                 {
                     cmb.SelectedIndex = i;
@@ -451,11 +501,14 @@ namespace FinalProjectByteCraft
             string[] categories = { "CPU", "GPU", "RAM", "Storage", "Power Supply", "Cooler" };
 
             int itemsAdded = 0;
+            // Repetition Structures
             foreach (var box in partBoxes)
             {
+                // Decision Structures
                 if (box != null && box.SelectedIndex > 0) itemsAdded++;
             }
 
+            // Decision Structures
             if (itemsAdded == 0)
             {
                 MessageBox.Show("Please select at least one component before adding to cart.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -471,12 +524,15 @@ namespace FinalProjectByteCraft
                 Price = 0m
             });
 
+            // Repetition Structures
             for (int i = 0; i < partBoxes.Length; i++)
             {
+                // Decision Structures
                 if (partBoxes[i] != null && partBoxes[i].SelectedIndex > 0)
                 {
                     decimal price = GetPriceFromSelection(partBoxes[i]);
                     string fullText = partBoxes[i].SelectedItem.ToString();
+                    // String Methods
                     string itemName = fullText.Substring(0, fullText.IndexOf(" - ₱"));
 
                     shoppingCart.Add(new CartItem
@@ -492,10 +548,12 @@ namespace FinalProjectByteCraft
             MessageBox.Show($"Custom Build Set #{buildSetCount} added to your cart successfully!", "Cart Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // Functions
         private void RefreshCartUI()
         {
             bool isEmpty = (shoppingCart.Count == 0);
 
+            // Decision Structures
             if (lblEmptyCart != null) lblEmptyCart.Visible = isEmpty;
             if (btnGoToBuilder != null) btnGoToBuilder.Visible = isEmpty;
             if (listCartItems != null) listCartItems.Visible = !isEmpty;
@@ -503,23 +561,27 @@ namespace FinalProjectByteCraft
             if (btnCheckout != null) btnCheckout.Visible = !isEmpty;
             if (lblCartTotalPrice != null) lblCartTotalPrice.Visible = !isEmpty;
 
+            // Decision Structures
             if (!isEmpty && listCartItems != null)
             {
                 listCartItems.Items.Clear();
                 decimal cartTotal = 0;
 
+                // Repetition Structures
                 foreach (CartItem item in shoppingCart)
                 {
                     listCartItems.Items.Add(item);
                     cartTotal += item.Price;
                 }
 
+                // Decision Structures
                 if (lblCartTotalPrice != null)
                 {
                     lblCartTotalPrice.Text = $"Total: ₱{cartTotal:N2}";
                 }
             }
-            else if (lblCartTotalPrice != null)
+            // Decision Structures
+            else if (lblCartTotalPrice != null) 
             {
                 lblCartTotalPrice.Text = "Total: ₱0.00";
             }
@@ -527,21 +589,27 @@ namespace FinalProjectByteCraft
 
         private void listCartItems_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            // Decision Structures
             if (isUpdatingCheck) return;
 
+            // Decision Structures
             if (listCartItems.Items[e.Index] is CartItem clickedItem)
             {
                 isUpdatingCheck = true;
 
+                // Decision Structures
                 if (clickedItem.Category == "SET_HEADER")
                 {
                     bool targetCheckState = (e.NewValue == CheckState.Checked);
                     int currentIndex = e.Index + 1;
 
+                    // Repetition Structures
                     while (currentIndex < listCartItems.Items.Count)
                     {
+                        // Decision Structures
                         if (listCartItems.Items[currentIndex] is CartItem nextItem)
                         {
+                            // Decision Structures
                             if (nextItem.Category == "SET_HEADER") break;
                             listCartItems.SetItemChecked(currentIndex, targetCheckState);
                         }
@@ -551,8 +619,10 @@ namespace FinalProjectByteCraft
                 else
                 {
                     int headerIndex = -1;
+                    // Repetition Structures
                     for (int i = e.Index; i >= 0; i--)
                     {
+                        // Decision Structures
                         if (listCartItems.Items[i] is CartItem item && item.Category == "SET_HEADER")
                         {
                             headerIndex = i;
@@ -560,20 +630,25 @@ namespace FinalProjectByteCraft
                         }
                     }
 
+                    // Decision Structures
                     if (headerIndex != -1)
                     {
                         bool anyItemChecked = false;
                         int checkIndex = headerIndex + 1;
 
+                        // Repetition Structures
                         while (checkIndex < listCartItems.Items.Count)
                         {
+                            // Decision Structures
                             if (listCartItems.Items[checkIndex] is CartItem nextItem && nextItem.Category == "SET_HEADER")
                             {
                                 break;
                             }
 
+                            // Decision Structures
                             bool isChecked = (checkIndex == e.Index) ? (e.NewValue == CheckState.Checked) : listCartItems.GetItemChecked(checkIndex);
 
+                            // Decision Structures
                             if (isChecked)
                             {
                                 anyItemChecked = true;
@@ -599,6 +674,7 @@ namespace FinalProjectByteCraft
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
+            // Decision Structures
             if (listCartItems.CheckedItems.Count == 0)
             {
                 MessageBox.Show("Please check the boxes of the PC sets or items you want to check out.", "No Items Checked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -606,18 +682,24 @@ namespace FinalProjectByteCraft
             }
 
             decimal checkedTotal = 0;
-            string  receiptText = $"Customer: {customerName}\r\n";
+            string receiptText = "=== BYTECRAFT SYSTEMS RECEIPT ===\r\n";
+            receiptText += $"Customer: {customerName}\r\n";
             receiptText += $"Date: {DateTime.Now:yyyy-MM-dd HH:mm:ss}\r\n";
+            receiptText += "----------------------------------------\r\n";
 
+            // Decision Structures
             if (listReceiptItems != null)
             {
                 listReceiptItems.Items.Clear();
             }
 
+            // Repetition Structures
             foreach (var checkedItem in listCartItems.CheckedItems)
             {
+                // Decision Structures
                 if (checkedItem is CartItem item)
                 {
+                    // Decision Structures
                     if (listReceiptItems != null)
                     {
                         listReceiptItems.Items.Add(item);
@@ -625,6 +707,7 @@ namespace FinalProjectByteCraft
 
                     receiptText += $"{item.ToString()}\r\n";
 
+                    // Decision Structures
                     if (item.Category != "SET_HEADER")
                     {
                         checkedTotal += item.Price;
@@ -635,10 +718,12 @@ namespace FinalProjectByteCraft
             receiptText += "----------------------------------------\r\n";
             receiptText += $"Total Amount Paid: ₱{checkedTotal:N2}\r\n";
 
+            // Decision Structures
             if (lblReceiptCustomer != null) lblReceiptCustomer.Text = $"Customer: {customerName}";
             if (lblReceiptDate != null) lblReceiptDate.Text = $"Date: {DateTime.Now:yyyy-MM-dd HH:mm:ss}";
             if (lblReceiptGrandTotal != null) lblReceiptGrandTotal.Text = $"Total Amount Paid: ₱{checkedTotal:N2}";
 
+            // Text File Manipulation
             try
             {
                 string fileName = $"Receipt_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
@@ -651,18 +736,21 @@ namespace FinalProjectByteCraft
             }
 
             ShowPanel(panelReceipt);
-        }  
+        }
 
         private void btnGoToBuilder_Click(object sender, EventArgs e) => ShowPanel(panelBuildPC);
         private void btnBackToBuilder_Click(object sender, EventArgs e) => ShowPanel(panelBuildPC);
 
+        // Graphical User Interfaces & Functions
         private void ShowPanel(Panel selectedPanel)
         {
+            // Decision Structures
             if (panelBuildPC != null) panelBuildPC.Visible = false;
             if (panelCatalog != null) panelCatalog.Visible = false;
             if (panelCart != null) panelCart.Visible = false;
             if (panelReceipt != null) panelReceipt.Visible = false;
 
+            // Decision Structures
             if (selectedPanel != null)
             {
                 selectedPanel.Visible = true;
@@ -675,6 +763,7 @@ namespace FinalProjectByteCraft
 
         private void button4_Click(object sender, EventArgs e)
         {
+            // Sequential Structures
             RefreshCartUI();
             ShowPanel(panelCart);
         }
@@ -691,6 +780,7 @@ namespace FinalProjectByteCraft
                 MessageBoxIcon.Question
             );
 
+            // Decision Structures
             if (result == DialogResult.Yes)
             {
                 Form1 login = new Form1();
